@@ -83,11 +83,22 @@ If you're done, desperate, or just want to chat about the project, get in touch 
 
 
 
-/*
- Dependency warning - for the CLI to run correctly,
+
+ <!--Dependency warning - for the CLI to run correctly,
  it is highly recommended to install/upgrade the following:
 
  Please install your Cordova CLI to version  >=4.2.0 `npm install -g cordova`
  Install ios-sim to deploy iOS applications.`npm install -g ios-sim` (may require sudo)
- Install ios-deploy to deploy iOS applications to devices.  `npm install -g ios-deploy` (may require sudo)
-*/
+ Install ios-deploy to deploy iOS applications to devices.  `npm install -g ios-deploy` (may require sudo)-->
+
+
+
+
+<!--when I tried to npm install ios-deploy
+
+!!!! WARNING: You are on OS X 10.11 El Capitan or greater, you may need to add the
+!!!! WARNING:   `--unsafe-perm=true` flag when running `npm install`
+!!!! WARNING:   or else it will fail.
+!!!! WARNING: link:
+!!!! WARNING:   https://github.com/phonegap/ios-deploy#os-x-1011-el-capitan-->
+

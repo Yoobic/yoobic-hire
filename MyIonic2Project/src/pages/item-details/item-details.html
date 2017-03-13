@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle *ngIf="!selectedItem">
+    <button menuToggle *ngIf="!hero">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Item Details</ion-title>
@@ -8,11 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <h3 text-center *ngIf="selectedItem">
-    {{selectedItem.title}}
-    <ion-icon [name]="selectedItem.icon"></ion-icon>
+  <h3 text-center *ngIf="hero">
+    {{hero.name}}
+    <ion-icon [name]="hero.icon"></ion-icon>
   </h3>
-  <h4 text-center *ngIf="selectedItem">
-    You navigated here from <b>{{selectedItem.title}}</b>
+  <h4 text-center *ngIf="hero">
+    You navigated here from <b>{{selectedItem.name}}</b>
   </h4>
 </ion-content>

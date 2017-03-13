@@ -2,12 +2,12 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule, JsonpModule }    from '@angular/http';
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
+import { HeroListComponent } from '../pages/list/list-hero.component';
 import { Signin } from '../pages/signin/signin';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { Signin } from '../pages/signin/signin';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage,
+    HeroListComponent,
     Signin
   ],
   imports: [
@@ -23,15 +23,15 @@ import { Signin } from '../pages/signin/signin';
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule,
-    AppRoutingModule
+    JsonpModule
+    // AppRoutingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage,
+    HeroListComponent,
     Signin
   ],
   providers: [{

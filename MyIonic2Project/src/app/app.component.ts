@@ -6,7 +6,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { Signin } from '../pages/signin/signin';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ListPage } from '../pages/list/list';
+import { HeroListComponent } from '../pages/list/list-hero.component';
 
 
 @Component({
@@ -29,8 +29,7 @@ export class MyApp {
     this.pages = [
       { title: 'Dashboard', component: Signin },
       { title: 'Photos', component: HelloIonicPage },
-      { title: 'Who Villains', component: ListPage },
-      { title: 'Time Lords', component: ListPage },
+      { title: 'Marvel Characters', component: HeroListComponent },
       { title: 'Chat', component: HelloIonicPage }
     ];
   }

@@ -1,0 +1,41 @@
+<!--EVENTUALLY DELETE! Cannot have this hamburger navigation on the sign in page-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="item item-input-inset">
+    <ion-img width="150px" height="270px" src="img/dw-logo-big.png"></ion-img>
+    <h4>Sign In</h4>
+  </div>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input [(ngModel)]="username" type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input [(ngModel)]="password"  type="password" value=""></ion-input>
+
+    </ion-item>
+    <p class="forgot-pw">forgot password?</p>
+
+  </ion-list>
+
+  <div class="item item-input-inset">
+    <button ion-button round color="light" (click)="signup()">Sign Up</button>
+    <button ion-button round color="dark" (click)="login()">Sign In</button>
+  </div>
+
+  <p class="terms">Terms & Conditions</p>
+</ion-content>

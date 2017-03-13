@@ -1,0 +1,26 @@
+page-signin {
+  // background-image: url('img/dr_tennant_03.jpg');
+  ion-content{
+    background-color: transparent;
+    // background-image: url('img/dr_tennant_03.jpg');
+
+    ion-item {
+      background-color: transparent;
+    }
+  }
+  div {
+    .item {
+      text-align: center;
+    }
+  }
+
+  p.forgot-pw {
+    text-align: right;
+  }
+
+  p.terms {
+    text-align: center;
+    position: relative;
+    top: 7vh;
+  }
+}

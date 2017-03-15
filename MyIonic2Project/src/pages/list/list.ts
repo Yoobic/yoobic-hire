@@ -4,7 +4,7 @@ export class Hero {
   // id: number;
   constructor(
     public id: number,
-    public icon: string,
+    public thumbnail: string,
     public name: string
   ) {}
 }

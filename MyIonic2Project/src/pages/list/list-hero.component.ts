@@ -17,32 +17,32 @@ export class HeroListComponent implements OnInit {
 
   constructor (private heroService: HeroService) {}
 
+  // Created a promise to ensure page loads only when call to API server completes and returns info
   ngOnInit() {
     this.fetchEvent()
-      .then(() => {
-        console.log("Heroes loaded", this.heroes)
+      .then((res) => {
+        this.isDataAvailable = true
+        console.log("Heroes loaded", this.heroes, this.isDataAvailable)
       })
       .catch(() => {
         console.log("No heroes", this.heroes);
-
       })
   }
 
-  getHeroes() {
-    this.heroService
-      .getHeroes()
-      .subscribe(
-        heroes => {
-          this.heroes = heroes
-          this.isDataAvailable = true
-          console.log("HERE HEROES?", this.heroes)
-          console.log("DATA?", this.isDataAvailable);
-        },
-        error => {
-          this.errorMessage = <any>error
-        }
-      )
-  }
+  // Unnecessary older code
+  // getHeroes() {
+  //   this.heroService
+  //     .getHeroes()
+  //     .subscribe(
+  //       heroes => {
+  //         this.heroes = heroes
+  //         this.isDataAvailable = true
+  //       },
+  //       error => {
+  //         this.errorMessage = <any>error
+  //       }
+  //     )
+  // }
 
   fetchEvent(): Promise<boolean> {
     var promise = new Promise<boolean>((resolve, reject) => {
@@ -56,8 +56,12 @@ export class HeroListComponent implements OnInit {
             } else {
               reject(false);
             }
-        });
-     });
-     return promise;
+          },
+          (error) => {
+            this.errorMessage = <any>error
+          }
+        );
+      });
+    return promise;
   }
 }

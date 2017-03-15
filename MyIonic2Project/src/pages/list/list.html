@@ -8,18 +8,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <div *ngIf="heroes">
-    <button ion-item>
-      <ion-icon *ngFor="let hero of heroes; let i = index" name={{i}} item-left></ion-icon>
-      {{heroes && hero.name}}
+  <ion-list *ngIf="isDataAvailable">
+    <button ion-item *ngFor="let hero of heroes">
+      <ion-thumbnail item-left>
+        <img src={{hero.icon}} />
+      </ion-thumbnail>
+      {{hero.name}}
       <div class="item-note" item-right>
-        HI
       </div>
     </button>
-    </div>
   </ion-list>
-  <div padding>
-    You navigated here from <b>WHAT</b>
-  </div>
 </ion-content>

@@ -29,9 +29,20 @@ export class HeroService {
       .catch(this.handleError);
   }
 
+  // private addThumbnail(array) {
+  //   array.forEach((item) => {
+  //     item.smallIcon = item.thumbnail.path + 'portrait_small.jpg'
+  //   })
+  // }
+
   private extractData(res: Response) {
     let body = res.json();
-    console.log("BODY YO", body.data.results)
+    // Icon paths need extra text to properly output icon images
+    let defaultIcon = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/portrait_small.jpg'
+    body.data.results.map((item) => {
+      item['icon'] = item.thumbnail.path + '/portrait_small.jpg' || defaultIcon
+    })
+
     return body.data.results || { };
   }
 

@@ -1,3 +1,22 @@
 page-list {
+  ul {
+    list-style-type: none;
 
+    li {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
 }
+
+
+// <ion-content>
+//   <ul *ngIf="isDataAvailable">
+//     <button class="marvel-list" ion-item>
+//       <li *ngFor="let hero of heroes">
+//         {{hero.name}}
+//         <hr />
+//       </li>
+//     </button>
+//   </ul>
+// </ion-content>

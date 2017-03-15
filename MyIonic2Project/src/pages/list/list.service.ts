@@ -1,5 +1,5 @@
 import { Injectable }              from '@angular/core';
-import { Http, Response, Headers, RequestOptions }          from '@angular/http';
+import { Http, Response }          from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -12,32 +12,16 @@ import { Hero } from './list';
 
 @Injectable()
 export class HeroService {
-  // let endUrl = "&ts=" + ts + "&hash=" + hash;
-  // private heroesUrl = 'http://gateway.marvel.com:80/v1/public/characters?apikey=216f5b23efe228e0eb005c1d68bc0ad7'
   private heroesUrl = 'http://gateway.marvel.com/v1/public/characters'; // URL to web API
-  // $http.defaults.headers.common['216f5b23efe228e0eb005c1d68bc0ad7'] = key;
-
   constructor (private http: Http) {}
 
-  getHeroes (): Observable<Hero[]> {
+  getHeroes(): Observable<Hero[]> {
     let publicKey = '216f5b23efe228e0eb005c1d68bc0ad7',
         privateKey = secret,
         ts = new Date().getTime();
     let hash = crypto.createHash('md5').update(ts + privateKey + publicKey).digest('hex');
-        // url += "&ts="+ts+"&hash="+hash;
-        // console.log('LE HASH', hash)
     let endUrl = "?apikey=" + publicKey + "&ts=" + ts + "&hash=" + hash;
     let finalUrl = this.heroesUrl + endUrl;
-
-    // let headers = new Headers({
-    //   'Access-Control-Allow-Origin': '*',
-    //   'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-    //   'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
-    //   'apikey': publicKey,
-    //   'ts': ts,
-    //   'hash': hash
-    // })
-    // let options = new RequestOptions({ headers: headers });
 
     return this.http
       .get(finalUrl)
@@ -45,17 +29,10 @@ export class HeroService {
       .catch(this.handleError);
   }
 
-  // addHero () {
-  //   if (!name) { return; }
-  //   this.heroService.addHero(name)
-  //                    .subscribe(
-  //                      hero  => this.heroes.push(hero),
-  //                      error =>  this.errorMessage = <any>error);
-  // }
-
   private extractData(res: Response) {
     let body = res.json();
-    return body.data || { };
+    console.log("BODY YO", body.data.results)
+    return body.data.results || { };
   }
 
   private handleError (error: Response | any) {

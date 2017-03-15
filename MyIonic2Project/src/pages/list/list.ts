@@ -1,7 +1,12 @@
 export class Hero {
+  // name: string;
+  // icon: string;
+  // id: number;
   constructor(
     public id: number,
-    public name: string) { }
+    public icon: string,
+    public name: string
+  ) {}
 }
 
 

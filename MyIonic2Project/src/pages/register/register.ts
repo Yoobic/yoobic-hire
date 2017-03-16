@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-import { Signin } from '../signin/signin';
+import { App, NavController, NavParams } from 'ionic-angular';
 
 @Component({
   // 'selector' here is for the CSS selector to locate the signin.scss file
@@ -14,9 +12,12 @@ export class Register {
   passwordConfirm: string;
 
   constructor(
+    private app: App,
     public navCtrl: NavController,
     public navParams: NavParams
-  ) {}
+  ) {
+    app._setDisableScroll(true)
+  }
 
   backToLogin() {
     this.navCtrl.pop();

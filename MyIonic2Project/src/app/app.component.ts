@@ -5,7 +5,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { Signin } from '../pages/signin/signin';
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { Dashboard } from '../pages/dashboard/dashboard';
 import { HeroListComponent } from '../pages/list/list-hero.component';
 
 
@@ -27,10 +27,9 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Dashboard', component: Signin },
-      { title: 'Photos', component: HelloIonicPage },
+      { title: 'Dashboard', component: Dashboard },
       { title: 'Marvel Characters', component: HeroListComponent },
-      { title: 'Chat', component: HelloIonicPage }
+      { title: 'Chat', component: Dashboard }
     ];
   }
 

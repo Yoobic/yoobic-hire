@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { App, NavController, NavParams, AlertController } from 'ionic-angular';
-import { Auth, User, UserDetails } from '@ionic/cloud-angular';
+// import { Auth, User, UserDetails } from '@ionic/cloud-angular';
 
 import { Register } from '../register/register';
+import { Dashboard } from '../dashboard/dashboard';
 
 @Component({
   // 'selector' here is for the CSS selector to locate the signin.scss file
@@ -10,13 +11,14 @@ import { Register } from '../register/register';
   templateUrl: 'signin.html'
 })
 export class Signin {
-  email: string;
+  username: string;
   password: string;
 
   constructor(
     private app: App,
-    public auth: Auth,
-    public user: User,
+    // public auth: Auth,
+    // public user: User,
+    // public userDetails: UserDetails,
     public alertCtrl: AlertController,
     public navCtrl: NavController,
     public navParams: NavParams
@@ -29,20 +31,21 @@ export class Signin {
   }
 
   login() {
-    let details: UserDetails = {
-      'email': this.email,
-      'password': this.password
+    if (this.username === 'admin@admin.com' && this.password === '1234') {
+      /* Normally I would authorize the user, once authorized successfully
+      then toggle but inputting pseudo functionality instead
+      */
+      this.authSuccess();
+      this.navCtrl.setRoot(Dashboard)
+    } else {
+      this.authError();
     }
-    this.auth.login(details)
-      .then(
-        this.authSuccess.bind(this),
-        this.authError.bind(this)
-      )
   }
 
   authSuccess() {
     setTimeout(() => {
-      this.navCtrl.setRoot(Dashboard)
+      // this.navCtrl.setRoot()
+      console.log("HERE in authsuccess")
     }, 500)
   }
 
@@ -52,5 +55,6 @@ export class Signin {
       subTitle: 'There was an error with your email or password',
       buttons: ['Continue']
     })
+    alert.present();
   }
 }

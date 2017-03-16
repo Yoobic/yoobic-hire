@@ -33,10 +33,10 @@ export class HeroListComponent implements OnInit {
     this.fetchEvent()
       .then((res) => {
         this.isDataAvailable = true
-        console.log("Heroes loaded", this.heroes, this.isDataAvailable)
+        console.log("Characters loaded")
       })
       .catch(() => {
-        console.log("No heroes", this.heroes);
+        console.log("No characters found");
       })
   }
 
@@ -72,7 +72,6 @@ export class HeroListComponent implements OnInit {
 
 /*
 OLD CODE
-
 // Unnecessary older code
   getHeroes() {
     this.heroService

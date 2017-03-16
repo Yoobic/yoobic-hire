@@ -1,4 +1,4 @@
-page-signin {
+page-forgotPW {
   .no-scroll .scroll-content{
     overflow: hidden;
   }
@@ -22,10 +22,9 @@ page-signin {
     .item {
       text-align: center;
     }
-
-    .logo {
-      margin-top: 110px;
-      margin-bottom: 60px;
+    .item-input-inset {
+      margin-top: 75px;
+      margin-bottom: 40px;
     }
   }
 
@@ -35,7 +34,8 @@ page-signin {
 
   p.terms {
     text-align: center;
-    margin-top: 150px;
+    position: relative;
+    top: 7vh;
   }
 }
 

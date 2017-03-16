@@ -13,6 +13,8 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { HeroListComponent } from '../pages/list/list-hero.component';
 // import { HeroService } from '../pages/list/list.service.ts';
 import { Signin } from '../pages/signin/signin';
+import { Register } from '../pages/register/register';
+// import { ForgotPW } from '../pages/forgotpw/forgotpw';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { Signin } from '../pages/signin/signin';
     HelloIonicPage,
     ItemDetailsPage,
     HeroListComponent,
-    Signin
+    Signin,
+    Register
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -36,7 +39,8 @@ import { Signin } from '../pages/signin/signin';
     HelloIonicPage,
     ItemDetailsPage,
     HeroListComponent,
-    Signin
+    Signin,
+    Register
   ],
   providers: [
     { provide: ErrorHandler,

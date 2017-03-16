@@ -1,10 +1,19 @@
 page-list {
-  ul {
-    list-style-type: none;
 
-    li {
-      margin-top: 10px;
-      margin-bottom: 20px;
+  .scroll-content {
+    background: linear-gradient(145deg, #6C6C6C,#95A2AB,#206AA7, #00508D, #002F57, #442144);
+    background: url('/img/drstrange-bg02.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    z-index: 2;
+
+    // color: #FFFFFF;
+  }
+
+  ion-list {
+    .item-md {
+      background: transparent;
     }
   }
 }

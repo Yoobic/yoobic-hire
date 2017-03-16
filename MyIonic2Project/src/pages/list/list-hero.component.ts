@@ -1,7 +1,11 @@
 // Observable Version
 import { Component, OnInit } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+
 import { Hero }              from './list';
 import { HeroService }       from './list.service';
+import { ItemDetailsPage } from '../item-details/item-details';
+
 
 @Component({
   selector: 'page-list',
@@ -14,10 +18,17 @@ export class HeroListComponent implements OnInit {
   heroes: Hero[];
   mode = 'Observable';
   isDataAvailable: boolean = false;
+  selectedItem: any;
 
-  constructor (private heroService: HeroService) {}
+  constructor (
+    private heroService: HeroService,
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {
+    this.selectedItem = navParams.get('item');
+  }
 
-  // Created a promise to ensure page loads only when call to API server completes and returns info
+  // set isDataAvailable to true only when promise resolves to true
   ngOnInit() {
     this.fetchEvent()
       .then((res) => {
@@ -29,21 +40,7 @@ export class HeroListComponent implements OnInit {
       })
   }
 
-  // Unnecessary older code
-  // getHeroes() {
-  //   this.heroService
-  //     .getHeroes()
-  //     .subscribe(
-  //       heroes => {
-  //         this.heroes = heroes
-  //         this.isDataAvailable = true
-  //       },
-  //       error => {
-  //         this.errorMessage = <any>error
-  //       }
-  //     )
-  // }
-
+  // Wrap call to API within a promise to ensure html page only loads when call is complete
   fetchEvent(): Promise<boolean> {
     var promise = new Promise<boolean>((resolve, reject) => {
       this.heroService
@@ -64,4 +61,30 @@ export class HeroListComponent implements OnInit {
       });
     return promise;
   }
+
+  itemTapped(event, item) {
+    this.navCtrl.push(ItemDetailsPage, {
+      item: item
+    });
+  }
 }
+
+
+/*
+OLD CODE
+
+// Unnecessary older code
+  getHeroes() {
+    this.heroService
+      .getHeroes()
+      .subscribe(
+        heroes => {
+          this.heroes = heroes
+          this.isDataAvailable = true
+        },
+        error => {
+          this.errorMessage = <any>error
+        }
+      )
+  }
+*/

@@ -9,10 +9,10 @@
 
 <ion-content>
   <ion-list *ngIf="isDataAvailable">
-    <button ion-item *ngFor="let hero of heroes">
-      <ion-thumbnail item-left>
+    <button ion-item *ngFor="let hero of heroes" (click)="itemTapped($event, hero)">
+      <ion-avatar item-left>
         <img src={{hero.icon}} />
-      </ion-thumbnail>
+      </ion-avatar>
       {{hero.name}}
       <div class="item-note" item-right>
       </div>

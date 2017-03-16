@@ -16,11 +16,17 @@ export class HeroService {
   constructor (private http: Http) {}
 
   getHeroes(): Observable<Hero[]> {
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    let random = getRandomIntInclusive(10, 100);
     let publicKey = '216f5b23efe228e0eb005c1d68bc0ad7',
         privateKey = secret,
         ts = new Date().getTime();
     let hash = crypto.createHash('md5').update(ts + privateKey + publicKey).digest('hex');
-    let endUrl = "?apikey=" + publicKey + "&ts=" + ts + "&hash=" + hash;
+    let endUrl = "?limit=20&offset=" + random + "&apikey=" + publicKey + "&ts=" + ts + "&hash=" + hash;
     let finalUrl = this.heroesUrl + endUrl;
 
     return this.http
@@ -38,9 +44,9 @@ export class HeroService {
   private extractData(res: Response) {
     let body = res.json();
     // Icon paths need extra text to properly output icon images
-    let defaultIcon = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/portrait_small.jpg'
     body.data.results.map((item) => {
-      item['icon'] = item.thumbnail.path + '/portrait_small.jpg' || defaultIcon
+      item['iconLG'] = item.thumbnail.path + '.jpg'
+      item['icon'] = item.thumbnail.path + '/portrait_small.jpg'
     })
 
     return body.data.results || { };

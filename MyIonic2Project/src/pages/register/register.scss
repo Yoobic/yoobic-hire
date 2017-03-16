@@ -1,11 +1,10 @@
-page-signin {
+page-register {
   .no-scroll .scroll-content{
     overflow: hidden;
   }
 
   .scroll-content {
-    background: linear-gradient(145deg, #6C6C6C,#95A2AB,#206AA7, #00508D, #002F57, #442144);
-    background: url('/img/drstrange02.png') no-repeat;
+    background: url('/img/drstrange-bg02.png') no-repeat;
     background-size: cover;
     background-position: center;
     margin: auto;
@@ -22,20 +21,10 @@ page-signin {
     .item {
       text-align: center;
     }
-
-    .logo {
-      margin-top: 110px;
-      margin-bottom: 60px;
+    .item-input-inset {
+      margin-top: 75px;
+      margin-bottom: 40px;
     }
-  }
-
-  p.forgot-pw {
-    text-align: right;
-  }
-
-  p.terms {
-    text-align: center;
-    margin-top: 150px;
   }
 }
 

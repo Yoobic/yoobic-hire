@@ -19,7 +19,7 @@ We understand that this is probably a brand new framework to you; you're probabl
 
 >***Nota bene***
 
->1) Ionic2 is still in beta currently and it has some bugs and kinks to be worked out. This means your app likely will too. If that's the case, it's fine. We're going to be looking more at how you built it than at what you built. Moreover, if you can't make it work, or you're struggling to finish in a reasonable amount of time, again: don't sweat it. We want to see what you've learned; if you don't have time to build all of it, then feel free sketch out the missing pieces and tell us how you'd build them and wire it all together. 
+>1) Ionic2 is still in beta currently and it has some bugs and kinks to be worked out. This means your app likely will too. If that's the case, it's fine. We're going to be looking more at how you built it than at what you built. Moreover, if you can't make it work, or you're struggling to finish in a reasonable amount of time, again: don't sweat it. We want to see what you've learned; if you don't have time to build all of it, then feel free sketch out the missing pieces and tell us how you'd build them and wire it all together.
 
 >2) We intend this to be an engaging learning opportunity for you. Have fun with it! If you are feeling comfortable and want to up the challenge, go beyond the spec. However, please try to hit the targets in the spec before going overboard. We're going to want to see what you've done with the core pieces first. We want to be able to see your whole app as well as review your code when we do our follow-up interview, so we advise you don't waste time adding what we're not going to get to see.
 
@@ -35,14 +35,14 @@ Actually we want you to build is what you see above with a slight change. Instea
 #### Views
 View | Descritption | Desired behavio(u)r
 --- | --- | ---
-**Sign-in** | A sign-in view. Needs username and password inputs as well as a sign-in button. Make the password field hide any characters that get entered. | The input boxes should take text input, and the sign-in button should work. On a basic level, just have the sign-in button take you directly to the Master List. The actual sign-in process is fine to mock. Of course, we'd love your app to have some logic inside it's own service with a User entity etc., but add that on a second pass after you've finished the rest of the app. Both versions are completely acceptable for this spec. 
+**Sign-in** | A sign-in view. Needs username and password inputs as well as a sign-in button. Make the password field hide any characters that get entered. | The input boxes should take text input, and the sign-in button should work. On a basic level, just have the sign-in button take you directly to the Master List. The actual sign-in process is fine to mock. Of course, we'd love your app to have some logic inside it's own service with a User entity etc., but add that on a second pass after you've finished the rest of the app. Both versions are completely acceptable for this spec.
 **Menu** | Make a side menu with some nav links. *(Hint: ionic2 has a menu ui component you should probably use.)* For the links, use the ones in the [wireframe](#the-big-picture), or  make up your own. | Make at least one link work to take you to the master list view and another work to take you to the sign-in. The rest can be disabled, link to the same view, or just left dead. The user should have a way of opening the menu from every view except the sign-in, and when opened the menu should push the current view out of the way. Opening the menu should not change the current view unless the user clicks one of the nav links.
-**Master List** | This should be a list of item cards. *(H: Also ionic2 ui components)*. We don't want these to be hard-coded somewhere, we want them to be populated from some kind of store/backend. The cards for the items can look like what you want, but they need to be able to display a `picture`, a `title`, and `some details or text` from the item. Feel free to add some elements to the cards, e.g. upvote/downvote-buttons or badges, but they aren't at all necessary. | The list should scroll, don't worry about making it infinite. Build a service to retrieve the cards. Don't focus too much on the store itself (you can just use an open data API like the [Star Wars API](http://www.swapi.com)). Instead focus on the service that retreives the data from the store and turns them into interactive item card components. **This service is one of the main things we're interested in so it's okay to spend some time getting it right,** ***but don't be afraid to move on if you get too stuck.*** Clicking a card should take the user to the detail view for that card's item. 
-**Detail** | This is a detail view for the item selected. It is primarily just a bigger version of the item's card from the master list view. It should display the picture from the card, but the picture should bigger. It shoud have the title, but bigger. It should have the details from the card, but more or all of them. Include a button that takes you back to the master list view. | The detail view doesn't really need a lot of interactive elements, other than the back button (and the menu). If you added interactive buttons on the cards in the master list view, go ahead and add the same here, probably as bar buttons after the detailed body information. 
+**Master List** | This should be a list of item cards. *(H: Also ionic2 ui components)*. We don't want these to be hard-coded somewhere, we want them to be populated from some kind of store/backend. The cards for the items can look like what you want, but they need to be able to display a `picture`, a `title`, and `some details or text` from the item. Feel free to add some elements to the cards, e.g. upvote/downvote-buttons or badges, but they aren't at all necessary. | The list should scroll, don't worry about making it infinite. Build a service to retrieve the cards. Don't focus too much on the store itself (you can just use an open data API like the [Star Wars API](http://www.swapi.com)). Instead focus on the service that retreives the data from the store and turns them into interactive item card components. **This service is one of the main things we're interested in so it's okay to spend some time getting it right,** ***but don't be afraid to move on if you get too stuck.*** Clicking a card should take the user to the detail view for that card's item.
+**Detail** | This is a detail view for the item selected. It is primarily just a bigger version of the item's card from the master list view. It should display the picture from the card, but the picture should bigger. It shoud have the title, but bigger. It should have the details from the card, but more or all of them. Include a button that takes you back to the master list view. | The detail view doesn't really need a lot of interactive elements, other than the back button (and the menu). If you added interactive buttons on the cards in the master list view, go ahead and add the same here, probably as bar buttons after the detailed body information.
 ***Chat (Bonus)*** | *If and only if you have free time and really feel the need to show off, take your best shot at making a chat view too.* | *Be warned, since we're looking at logic and services more than views, we're going to expect your chat to be somewhat functional.*
 
 #### Language
-You can build the app in typescript or javascript (ES6). We recommend trying typescript, since much of the documentation for anular2 & ionic2 out there is in typescript. However, if you prefer and/or are just more comfortable in javascript, we're cool with either one. 
+You can build the app in typescript or javascript (ES6). We recommend trying typescript, since much of the documentation for anular2 & ionic2 out there is in typescript. However, if you prefer and/or are just more comfortable in javascript, we're cool with either one.
 
 
 ## The setup
@@ -80,3 +80,25 @@ You can check out our [style guide](https://app.frontify.com/d/GEu6ejIkiL3x/yoob
 If you're done, desperate, or just want to chat about the project, get in touch with me at my yoobic.com email address, jskrzypek@ (please tag/preface the subject with `[hiring-project]`). I can answer any questions you might have or schedule time for a skype chat to help you out if you get stuck. Don't hesitate to ask for help if you need it, but please try it on your own first even if you think you didn't get it. You probably understood more than you thought. Asking for help won't be held against you, but don't use me as a crutch.
 
 ### GOOD LUCK!
+
+
+
+
+ <!--Dependency warning - for the CLI to run correctly,
+ it is highly recommended to install/upgrade the following:
+
+ Please install your Cordova CLI to version  >=4.2.0 `npm install -g cordova`
+ Install ios-sim to deploy iOS applications.`npm install -g ios-sim` (may require sudo)
+ Install ios-deploy to deploy iOS applications to devices.  `npm install -g ios-deploy` (may require sudo)-->
+
+
+
+
+<!--when I tried to npm install ios-deploy
+
+!!!! WARNING: You are on OS X 10.11 El Capitan or greater, you may need to add the
+!!!! WARNING:   `--unsafe-perm=true` flag when running `npm install`
+!!!! WARNING:   or else it will fail.
+!!!! WARNING: link:
+!!!! WARNING:   https://github.com/phonegap/ios-deploy#os-x-1011-el-capitan-->
+

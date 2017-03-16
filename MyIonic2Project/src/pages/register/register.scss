@@ -1,0 +1,39 @@
+page-register {
+  .no-scroll .scroll-content{
+    overflow: hidden;
+  }
+
+  .scroll-content {
+    background: url('/img/drstrange-bg02.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    z-index: 2;
+
+    color: #FFFFFF;
+  }
+
+  .sign-input {
+    background-color: transparent;
+  }
+
+  div {
+    .item {
+      text-align: center;
+    }
+    .item-input-inset {
+      margin-top: 75px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+  // background-image: url('../www/img/dr_tennant_03.jpg');
+  // ion-content{
+  //   // background-color: transparent;
+  //   // background-image: url('img/drstrange02.jpg');
+
+  //   ion-item {
+  //     background-color: transparent;
+  //   }
+  // }

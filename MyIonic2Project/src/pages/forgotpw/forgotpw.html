@@ -1,0 +1,40 @@
+<!--EVENTUALLY DELETE! Cannot have this hamburger navigation on the sign in page-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="background no-scroll" scroll="false">
+
+  <div class="item item-input-inset">
+    <img src="img/logo.png" />
+  </div>
+
+  <ion-list>
+
+    <ion-item class="sign-input">
+      <ion-label floating><strong>Username</strong></ion-label>
+      <ion-input [(ngModel)]="username" type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item class="sign-input">
+      <ion-label floating><strong>Password</strong></ion-label>
+      <ion-input [(ngModel)]="password"  type="password" value=""></ion-input>
+
+    </ion-item>
+    <p class="forgot-pw"><strong>forgot password?</strong></p>
+
+  </ion-list>
+
+  <div class="item item-input-inset">
+    <button ion-button round color="light" (click)="signup()">Sign Up</button>
+    <button ion-button round color="dark" (click)="login()">Sign In</button>
+  </div>
+
+  <p class="terms"><strong>Terms & Conditions</strong></p>
+</ion-content>

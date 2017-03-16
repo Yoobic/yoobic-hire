@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Marvel Heroes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="isDataAvailable">
+    <button ion-item *ngFor="let hero of heroes" (click)="itemTapped($event, hero)">
+      <ion-avatar item-left>
+        <img src={{hero.icon}} />
+      </ion-avatar>
+      {{hero.name}}
+      <div class="item-note" item-right>
+      </div>
+    </button>
+  </ion-list>
+</ion-content>

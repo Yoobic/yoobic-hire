@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Marvel Character Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="selectedItem">
+    <img src={{selectedItem.iconLG}} />
+
+    <ion-list>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              <strong>CHARACTER:</strong>
+            </ion-col>
+            <ion-col col-8>
+              {{selectedItem.name}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4>
+              <strong>DESCRIPTION:</strong>
+            </ion-col>
+            <ion-col col-8 text-wrap>
+              {{selectedItem.description}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              <strong>SERIES:</strong>
+            </ion-col>
+            <ion-col col-8>
+            </ion-col>
+            <ion-col col-12>
+             <ion-list *ngFor="let series of itemSeries">
+               <ion-item text-wrap>
+                 {{series.name}}
+               </ion-item>
+               <hr />
+             </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+         <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              <strong>STORIES:</strong>
+            </ion-col>
+            <ion-col col-8>
+            </ion-col>
+            <ion-col col-12>
+             <ion-list *ngFor="let story of itemStories">
+               <ion-item text-wrap>
+                 {{story.name}}
+               </ion-item>
+               <hr />
+             </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

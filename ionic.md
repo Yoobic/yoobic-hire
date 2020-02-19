@@ -78,6 +78,6 @@ You can check out our [style guide](https://app.frontify.com/d/GEu6ejIkiL3x/yoob
  + [TypeStrong's typescript workshop](https://github.com/TypeStrong/learn-typescript)
 
 ## The lifeline
-If you're done, desperate, or just want to chat about the project, get in touch with me at my yoobic.com email address, estrickland@ (please tag/preface the subject with `[hiring-project]`). I can answer any questions you might have or schedule time for a skype chat to help you out if you get stuck. Don't hesitate to ask for help if you need it, but please try it on your own first even if you think you didn't get it. You probably understood more than you thought. Asking for help won't be held against you, but don't use me as a crutch.
+If you're done, desperate, or just want to chat about the project, get in touch with me at my yoobic.com email address, tkiddle@ (please tag/preface the subject with `[hiring-project]`). I can answer any questions you might have or schedule time for a skype chat to help you out if you get stuck. Don't hesitate to ask for help if you need it, but please try it on your own first even if you think you didn't get it. You probably understood more than you thought. Asking for help won't be held against you, but don't use me as a crutch.
 
 ### GOOD LUCK!
